@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -89,6 +89,33 @@
 		  text-decoration: none;
 		  cursor:pointer;
 		}
+		
+		.container {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 8px;
+			margin: 25px 0;
+            align-items: center;
+            justify-items: center;
+		}
+		
+		.container2 {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 8px;
+			margin: 25px 0;
+            align-items: center;
+            justify-items: center;
+		}
+
+		.item {
+			padding: 12px 15px;
+			margin-bottom: 10px; /* Menambahkan margin bawah */
+		    min-height: 6rem;
+			min-width: 0;
+		}
+		
+		
     </style>
 </head>
 <body>
@@ -191,7 +218,7 @@
         <section id="seksi2">
             <h2>Math Tools and Resources</h2>
             
-			<div id="isi">
+			<div id="isi" class = "container">
 			</div>
 			<div id="tombolTambah">
 			  <a id="tambah"></a>
@@ -297,23 +324,21 @@
 			{
 				var num_rows = 5;
 				var num_cols = 4;
-				var theader = '<table border="0" style="text-align:center; margin-left: auto; margin-right: auto;" cellpadding="15">\n';
+				var theader = '';
 				var tbody = '';
 				var k = 0;
 			  
 				  for( var i=0; i<num_rows;i++)
 				  {
-					tbody += '<tr>';
 					for( var j=0; j<num_cols;j++)
 					{
-						tbody += '<td>';
-						tbody += '<a target="_blank" id="Tabel'+n+'Nomor'+k+'"></a>';
+						tbody += '<a class="item" target="_blank" id="Tabel'+n+'Nomor'+k+'"></a>';
 						k = k+1;
-						tbody += '</td>'
 					}
-					tbody += '</tr>\n';
+					tbody += '';
 				}
-				var tfooter = '</table>';
+				
+				var tfooter = '';
 
 				return theader + tbody + tfooter;
 			}
@@ -352,7 +377,7 @@
         <section id="seksi3">
             <h2>Random Math Videos</h2>
             <div id="badan2">
-			<div id="isi2">
+			<div id="isib" class = "container2">
 			</div>
 			</div>
 			<div id="tombolTambah2">
@@ -577,9 +602,10 @@
 			<script>
 			//cadangkan
 			function cadangkan(){
-			document.getElementById('isi2').removeAttribute('id');
+			document.getElementById('isib').removeAttribute('id');
 			cadang = document.createElement('div');
-			cadang.setAttribute("id", "isi2");
+			cadang.setAttribute("id", "isib");
+			cadang.setAttribute("class", "container2");
 
 			document.getElementById("badan2").appendChild(cadang);
 
@@ -594,34 +620,34 @@
 			banyakTabel = 1;
 			//SimpananArray
 			  
-			function buatTabel(){
+			function buatTabel2(){
 
 
 			isiVideo = '';
 			idVideoTerpilih = [];
 			counterVideo = -1
-			for (var m=0; m<5; m++){
-			isiVideo += '<tr>';
+			for (var m=0; m<2; m++){
+			isiVideo += '';
 			for (var k=0; k<3; k++){
 			counterVideo ++;
 			chanssRanVid = videoIdLists;
 			chanssRanVid = chanssRanVid.concat(daftarHasilSearch);
 			 pilihlinkRandVid = chanssRanVid[Math.floor(Math.random()*chanssRanVid.length)];
-			isiVideo += '<td style="vertical-align:top;"><div><iframe id="player" width="345" height="236" src="https://www.youtube.com/embed/' + pilihlinkRandVid + '" frameborder="0" allowfullscreen></iframe><br><span style="font-family:arial;font-size:24px;" id="videoId'+pilihlinkRandVid+counterVideo+'"></span><br><a href ="https://www.youtube.com/watch?v='+pilihlinkRandVid+'" target="_blank"><button class="btn">Watch on YouTube</button></a></div></td>';
+			isiVideo += '<div class = "item"><iframe id="player" width="345" height="236" src="https://www.youtube.com/embed/' + pilihlinkRandVid + '" frameborder="0" allowfullscreen></iframe><br><span style="font-family:arial;font-size:24px;" id="videoId'+pilihlinkRandVid+counterVideo+'"></span><br><a href ="https://www.youtube.com/watch?v='+pilihlinkRandVid+'" target="_blank"><button class="btn">Watch on YouTube</button></a></div>';
 
 			idVideoTerpilih.push(pilihlinkRandVid)
 
 			}
-			isiVideo += '</tr>';
+			isiVideo += '';
 			}
-			document.getElementById('isi2').innerHTML += '<table width="350" style="margin-left:auto;margin-right:auto;"><tr>'+isiVideo+'</tr></table>';
+			document.getElementById('isib').innerHTML += isiVideo;
 
 			daftarJudulVideo = [];
 			for (var k=0; k<counterVideo+1; k++){
 			  var idVideoNya = idVideoTerpilih[k];
 			  $.getJSON('https://www.googleapis.com/youtube/v3/videos?id='+idVideoNya+'&key=AIzaSyA4BtfSNwqajVGODF8yzY_hNbfB4BLH1aM&part=snippet&callback=?',function(data){
 				if (typeof(data.items[0]) != "undefined") {   daftarJudulVideo.push([data.items[0].snippet.title,data.items[0].id]);
-			 if (daftarJudulVideo.length == 15){taruhJudul();}
+			 if (daftarJudulVideo.length == 6){taruhJudul();}
 				   } else {
 					console.log('video not exists');
 				 }   
@@ -643,9 +669,9 @@
 			  pilihanWarna1 = getRandomColor();
 				pilihanWarna2 = getRandomColor();
 				pilihanWarna3 = getRandomColor();
-				document.getElementById('tambah2').innerHTML = '<button onclick="buatTabel();cadangkan();" class="btn" id="Tombol" onmouseover="document.getElementById(\'Tombol\').style.backgroundColor=\''+pilihanWarna2+'\';" onmouseout="document.getElementById(\'Tombol\').style.backgroundColor=\''+pilihanWarna3+'\';" style="background-color: '+pilihanWarna1+'">More...</button>';
+				document.getElementById('tambah2').innerHTML = '<button onclick="buatTabel2();cadangkan();" class="btn" id="Tombol" onmouseover="document.getElementById(\'Tombol\').style.backgroundColor=\''+pilihanWarna2+'\';" onmouseout="document.getElementById(\'Tombol\').style.backgroundColor=\''+pilihanWarna3+'\';" style="background-color: '+pilihanWarna1+'">More...</button>';
 			  
-			buatTabel(); cadangkan();
+			buatTabel2(); cadangkan();
 			</script>
 				
         </section>
