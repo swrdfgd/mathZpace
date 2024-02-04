@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mathZpace</title>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' type='text/javascript'></script>
+    <script src="daftarKata.js"></script>
+	
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #fff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+		
+		.myButton {
+		  border-radius: 28px;
+		  color: #fff;
+		  text-shadow: 0 0 6px black;
+		  font-family: Arial;
+		  font-size: 1.5em;
+		  padding: 10px 20px 10px 20px;
+		  text-decoration: none;
+		  min-width: 15rem;
+		  max-width: 15rem;
+		  min-height: 6rem;
+		  cursor:pointer;
+		}
+		.myButton:active {
+			position:relative;
+			top:1px;
+		}
+		
+		.btn {
+		  border-radius: 28px;
+		  font-family: Arial;
+		  font-size: 24px;
+		  padding: 10px 20px 10px 20px;
+		  text-decoration: none;
+		  cursor:pointer;
+		}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="separator" style="display: block; padding: 1em 0px; text-align: center;"><img  alt="" border="0" data-original-height="500" data-original-width="2292" src="mathzpace.png" width="640" /></div>
+    </header>
+    <nav>
+        <a href="#seksi1">Math Sites</a>
+        <a href="#seksi2">Math Tools and Resources</a>
+        <a href="#seksi3">Random Math Videos</a>
+    </nav>
+    <main>
+	<!-- Seksi 1 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <section id="seksi1">
+            <h2>Math Sites</h2>
+			 <style>
+			 .link-url {
+				 color: #0000EE;
+				 font-size: 15px;
+				 text-decoration: none;
+				 font-family: Arial, Helvetica, sans-serif;
+			  }
+			  .link-url:hover {
+				 -webkit-animation:link-url 1s infinite;
+				 -moz-animation:link-url 1s infinite;
+				  animation:link-url 1s infinite;
+			  }
+			  @-webkit-keyframes link-url {
+				 0% {color: #ff0000;}
+				 10% {color: #ff8000;}
+				 20% {color: #ffff00;}
+				 30% {color: #80ff00;}
+				 40% {color: #00ff00;}
+				 50% {color: #00ff80;}
+				 60% {color: #00ffff;}
+				 70% {color: #0080ff;}
+				 80% {color: #0000ff;}
+				 90% {color: #8000ff;}
+				 100% {color: #ff0080;}
+			  }
+			  @-moz-keyframes link-url {
+				 0% {color: #ff0000;}
+				 10% {color: #ff8000;}
+				 20% {color: #ffff00;}
+				 30% {color: #80ff00;}
+				 40% {color: #00ff00;}
+				 50% {color: #00ff80;}
+				 60% {color: #00ffff;}
+				 70% {color: #0080ff;}
+				 80% {color: #0000ff;}
+				 90% {color: #8000ff;}
+				 100% {color: #ff0080;}
+				 }
+			  @keyframes link-url {
+				 0% {color: #ff0000;}
+				 10% {color: #ff8000;}
+				 20% {color: #ffff00;}
+				 30% {color: #80ff00;}
+				 40% {color: #00ff00;}
+				 50% {color: #00ff80;}
+				 60% {color: #00ffff;}
+				 70% {color: #0080ff;}
+				 80% {color: #0000ff;}
+				 90% {color: #8000ff;}
+				 100% {color: #ff0080;}
+			  }
+
+			</style>
+
+			<div>
+			<table border="0" style="padding: 20px; margin-right:auto;cellspacing:20px">
+			<tr>
+			<td style="padding: 20px;cellspacing:20px"><a  onclick="gantiWiki();" id="menu1" target="_blank" class="link-url" href="https://en.wikipedia.org/wiki/Special:RandomInCategory/Mathematics">Wikipedia</a></td>
+			<td style="padding: 20px;cellspacing:20px"><a id="menu2" target="_blank" class="link-url" href="https://mathworld.wolfram.com/cgi-bin/random.cgi">MathWorld</a></td>
+			<td style="padding: 20px;cellspacing:20px"><a id="menu3" target="_blank" class="link-url" href="https://artofproblemsolving.com/wiki/index.php/Special:Random">Art of Problem Solving</a></td>
+			<td style="padding: 20px;cellspacing:20px"><a id="menu4" target="_blank" class="link-url" href="https://math.stackexchange.com/" onclick="document.getElementById('menu4').setAttribute('href','https://math.stackexchange.com/questions/'+Math.ceil(Math.random()*4592806));">Math Stack Exchange</a></td>
+			</tr>
+			<tr>
+			<td style="padding: 20px;cellspacing:20px"><a id="menu5" target="_blank" class="link-url" href="https://mathoverflow.net/" onclick="document.getElementById('menu5').setAttribute('href','https://mathoverflow.net/questions/'+Math.ceil(Math.random()*447178));">MathOverflow</a></td>
+			<td style="padding: 20px;cellspacing:20px"><a id="menu6" target="_blank" class="link-url" href="https://proofwiki.org/wiki/Special:Random" >ProofWiki</a></td>
+			<td style="padding: 20px;cellspacing:20px"><a id="menu7" target="_blank" class="link-url" href="https://encyclopediaofmath.org/wiki/Special:Random" >Encyclopedia of Mathematics</a>
+			</td>
+			<td style="padding: 20px;cellspacing:20px"><a   id="menu8" target="_blank" class="link-url" href="https://handwiki.org/wiki/special:RandomInCategory/Mathematics">HandWiki</a></td>
+			</tr>
+			</table>
+			</div>
+			<br />
+
+			<script>
+			var wikiCat = ['Mathematics','Mathematical_proofs','Theorems','Article_proofs','Articles_containing_proofs','Automated_theorem_proving','Proof_theory','Computer-assisted_proofs','Mathematical_fallacies','Mathematical_induction','Proof_techniques','Proof_without_words','Reduction_(complexity)','Binary_relations','Wellfoundedness','Boolean_algebra','Formal_methods','Mathematics_stubs','Mathematics_and_culture','Procedural_generation','Computational_fields_of_study','Computer_art','Automata_(computation)','Complex_systems_theory','Recreational_mathematics','Self-organization','Systems_theory','Dynamical_systems','Mathematical_examples','Mathematics-related_lists','Theorems_in_statistics','Estimation_theory','Works_about_the_history_of_mathematics','History_of_mathematics','Historiography_of_mathematics','History_of_mathematics_journals','Mathematics_journals','Mathematics_journal_stubs','Statistical_paradoxes','Logic','Applied_mathematics','Fields_of_mathematics','Domain_decomposition_methods','Mathematicians','Mathematical_science_occupations','Books_about_the_history_of_mathematics','Books_about_mathematics','Biographies_and_autobiographies_of_mathematicians','Fuzzy_logic','Differential_equations','Pythagorean_theorem','Pythagoras','Equations','Diophantine_equations','Euclidean_plane_geometry','Metric_geometry','Theorems_about_right_triangles','Parts_of_a_triangle','Trigonometry','Triangles','Euclidean_geometry','Elementary_geometry','Linear_algebra','Continued_fractions','Logic_puzzles','Order_theory','Ordinal_numbers','Enumerative_combinatorics','Category_theory','Algebraic_topology','Higher_category_theory','Algebraic_logic','Categorical_logic','Noncommutative_geometry','Mathematical_quantization','Algebraic_geometry','Statistics_journals','Institute_of_Mathematical_Statistics_academic_journals','Curves','Algebraic_geometry_stubs','Mathematical_artworks','Group_theory','Operator_algebras','Algebra_stubs','Elementary_algebra','Computer_arithmetic','Division_(mathematics)','Computer_errors','Infinity','Mathematical_analysis','Fractals','Dimension_theory','Mathematical_terminology','Formal_methods_terminology','Software_engineering_terminology','Theoretical_computer_science','Software_quality','Model_checking','Logic_in_computer_science','Temporal_logic','Homotopy_theory','Conjectures','Topology_stubs','Graph_theory','Mathematical_logic','Dutch_logicians','Classical_geometry','Euclid','Foundations_of_geometry','Mathematical_axioms','Mathematics_textbooks','Glossaries_of_mathematics','Enterprise_modelling','Notation','Properties_of_binary_operations','Functional_analysis','Rules_of_inference'];
+
+			function gantiWiki(){
+			document.getElementById('menu1').setAttribute('href','https://en.wikipedia.org/wiki/Special:RandomInCategory/'+wikiCat[Math.floor(Math.random()*wikiCat.length)]);
+			}
+			</script>	
+        </section>
+	<!-- Akhir seksi 1 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+		
+	<!-- Seksi 2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->		
+        <section id="seksi2">
+            <h2>Math Tools and Resources</h2>
+            
+			<div id="isi">
+			</div>
+			<div id="tombolTambah">
+			  <a id="tambah"></a>
+			</div>
+
+			<script src="daftarlinkmath.js"></script>
+
+			<script>
+			//fungsi-fungsi
+
+			//fungsi warna random------------------------------------------------------------------------------
+			function getRandomColor() {
+			  var lettersz = '0123456789abcdef';
+			  var colorz = '#';
+			  for (var i = 0; i < 6; i++) {
+				colorz += lettersz[Math.floor(Math.random() * 16)];
+			  }
+			  return colorz;
+			}
+			//------------------------------------------------------------------------------------------------
+
+			//fungsi string random---------------------------------------------------------------------------------------------------------------------
+			function randstring(length) {
+				var result           = '';
+				var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+				var charactersLength = characters.length;
+				for ( var i = 0; i < length; i++ ) {
+				  result += characters.charAt(Math.floor(Math.random() * 
+			 charactersLength));
+			   }
+			   return result;
+			}
+			//------------------------------------------------------------------------------------------------
+
+			//fungsi string random lower case dan bilangan---------------------------------------------------------------------------------------------------------------------
+			function randstringLNum(length) {
+				var result           = '';
+				var characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
+				var charactersLength = characters.length;
+				for ( var i = 0; i < length; i++ ) {
+				  result += characters.charAt(Math.floor(Math.random() * 
+			 charactersLength));
+			   }
+			   return result;
+			}
+			//------------------------------------------------------------------------------------------------
+
+			//fungsi string random upper case dan bilangan---------------------------------------------------------------------------------------------------------------------
+			function randstringUNum(length) {
+				var result           = '';
+				var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+				var charactersLength = characters.length;
+				for ( var i = 0; i < length; i++ ) {
+				  result += characters.charAt(Math.floor(Math.random() * 
+			 charactersLength));
+			   }
+			   return result;
+			}
+			//------------------------------------------------------------------------------------------------
+			  
+			//fungsi string random lowercase------------------------------------------------------------------------------
+			function randstringLowCase(length) {
+				var result           = '';
+				var characters       = 'abcdefghijklmnopqrstuvwxyz';
+				var charactersLength = characters.length;
+				for ( var i = 0; i < length; i++ ) {
+				  result += characters.charAt(Math.floor(Math.random() * 
+			 charactersLength));
+			   }
+			   return result;
+			}
+			//------------------------------------------------------------------------------------------------
+			  
+			//fungsi google book random id------------------------------------------------------------------------------
+			function getRandomBookId() {
+			  var lettersz = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_';
+			  var colorz = '';
+			  for (var i = 0; i < 11; i++) {
+				colorz += lettersz[Math.floor(Math.random() * lettersz.length)];
+			  }
+			  return colorz;
+			}
+			//------------------------------------------------------------------------------------------------
+
+			//fungsi hex random------------------------------------------------------------------------------
+			function genHexString(len) {
+				const hex = '0123456789abcdef';
+				let output = '';
+				for (let i = 0; i < len; ++i) {
+					output += hex.charAt(Math.floor(Math.random() * hex.length));
+				}
+				return output;
+			}
+			//------------------------------------------------------------------------------------------------
+			</script>
+
+			<script>
+			</script>
+
+			<script>
+			//Buat Tabel
+			function createTable(n)
+			{
+				var num_rows = 5;
+				var num_cols = 4;
+				var theader = '<table border="0" style="text-align:center; margin-left: auto; margin-right: auto;" cellpadding="15">\n';
+				var tbody = '';
+				var k = 0;
+			  
+				  for( var i=0; i<num_rows;i++)
+				  {
+					tbody += '<tr>';
+					for( var j=0; j<num_cols;j++)
+					{
+						tbody += '<td>';
+						tbody += '<a target="_blank" id="Tabel'+n+'Nomor'+k+'"></a>';
+						k = k+1;
+						tbody += '</td>'
+					}
+					tbody += '</tr>\n';
+				}
+				var tfooter = '</table>';
+
+				return theader + tbody + tfooter;
+			}
+			  
+			</script>
+
+			<script>
+			banyakTabel = 1;
+			//SimpananArray
+			  
+			function buatTabel(){
+			  document.getElementById('isi').innerHTML += createTable(banyakTabel);
+			  for(var j=0; j<20;j++){
+				pilihanLink = daftarlinkmath[Math.floor(Math.random()*daftarlinkmath.length)];
+				pilihanWarna1 = getRandomColor();
+				pilihanWarna2 = getRandomColor();
+				pilihanWarna3 = getRandomColor();
+				document.getElementById('Tabel'+banyakTabel+'Nomor'+j).setAttribute("href", pilihanLink[0]);
+				document.getElementById('Tabel'+banyakTabel+'Nomor'+j).innerHTML = '<button class="myButton" id = "T'+banyakTabel+'N'+j+'" onmouseover="document.getElementById(\'T'+banyakTabel+'N'+j+'\').style.backgroundColor=\''+pilihanWarna2+'\';" onmouseout="document.getElementById(\'T'+banyakTabel+'N'+j+'\').style.backgroundColor=\''+pilihanWarna3+'\';" style="background-color: '+pilihanWarna1+'">'+pilihanLink[1]+'</button>';
+			  }
+			banyakTabel += 1;
+			}
+			
+			  pilihanWarna1 = getRandomColor();
+				pilihanWarna2 = getRandomColor();
+				pilihanWarna3 = getRandomColor();
+				document.getElementById('tambah').innerHTML = '<button onclick="buatTabel()" class="myButton" id="Tombol" onmouseover="document.getElementById(\'Tombol\').style.backgroundColor=\''+pilihanWarna2+'\';" onmouseout="document.getElementById(\'Tombol\').style.backgroundColor=\''+pilihanWarna3+'\';" style="background-color: '+pilihanWarna1+'">More...</button>';
+			  
+			buatTabel();
+			</script>
+
+        </section>
+	<!-- Akhir seksi 2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+	<!-- Seksi 3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->		
+        <section id="seksi3">
+            <h2>Random Math Videos</h2>
+            <div id="badan2">
+			<div id="isi2">
+			</div>
+			</div>
+			<div id="tombolTambah2">
+			  <a id="tambah2"></a>
+			</div>
+
+
+
+			<script>
+			 banyakMathList = 27;
+			  document.write('<scr'+'ipt src="https://cdn.jsdelivr.net/gh/swrdfgd/randYoutube/videoListsMath'+Math.ceil(Math.random()*banyakMathList)+'.js"></sc'+'ript>')
+			</script>
+
+			<script>
+			//fungsi-fungsi
+
+			//fungsi warna random------------------------------------------------------------------------------
+			function getRandomColor() {
+			  var lettersz = '0123456789abcdef';
+			  var colorz = '#';
+			  for (var i = 0; i < 6; i++) {
+				colorz += lettersz[Math.floor(Math.random() * 16)];
+			  }
+			  return colorz;
+			}
+			//------------------------------------------------------------------------------------------------
+
+			//fungsi string random---------------------------------------------------------------------------------------------------------------------
+			function randstring(length) {
+				var result           = '';
+				var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+				var charactersLength = characters.length;
+				for ( var i = 0; i < length; i++ ) {
+				  result += characters.charAt(Math.floor(Math.random() * 
+			 charactersLength));
+			   }
+			   return result;
+			}
+			//------------------------------------------------------------------------------------------------
+
+			//fungsi string random lower case dan bilangan---------------------------------------------------------------------------------------------------------------------
+			function randstringLNum(length) {
+				var result           = '';
+				var characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
+				var charactersLength = characters.length;
+				for ( var i = 0; i < length; i++ ) {
+				  result += characters.charAt(Math.floor(Math.random() * 
+			 charactersLength));
+			   }
+			   return result;
+			}
+			//------------------------------------------------------------------------------------------------
+
+			//fungsi string random upper case dan bilangan---------------------------------------------------------------------------------------------------------------------
+			function randstringUNum(length) {
+				var result           = '';
+				var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+				var charactersLength = characters.length;
+				for ( var i = 0; i < length; i++ ) {
+				  result += characters.charAt(Math.floor(Math.random() * 
+			 charactersLength));
+			   }
+			   return result;
+			}
+			//------------------------------------------------------------------------------------------------
+			  
+			//fungsi string random lowercase------------------------------------------------------------------------------
+			function randstringLowCase(length) {
+				var result           = '';
+				var characters       = 'abcdefghijklmnopqrstuvwxyz';
+				var charactersLength = characters.length;
+				for ( var i = 0; i < length; i++ ) {
+				  result += characters.charAt(Math.floor(Math.random() * 
+			 charactersLength));
+			   }
+			   return result;
+			}
+			//------------------------------------------------------------------------------------------------
+			  
+			//fungsi google book random id------------------------------------------------------------------------------
+			function getRandomBookId() {
+			  var lettersz = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_';
+			  var colorz = '';
+			  for (var i = 0; i < 11; i++) {
+				colorz += lettersz[Math.floor(Math.random() * lettersz.length)];
+			  }
+			  return colorz;
+			}
+			//------------------------------------------------------------------------------------------------
+
+			//fungsi hex random------------------------------------------------------------------------------
+			function genHexString(len) {
+				const hex = '0123456789abcdef';
+				let output = '';
+				for (let i = 0; i < len; ++i) {
+					output += hex.charAt(Math.floor(Math.random() * hex.length));
+				}
+				return output;
+			}
+			//------------------------------------------------------------------------------------------------
+			</script>
+
+			<script>
+			//taruh judul
+			function taruhJudul(){
+			for (var k=0; k<counterVideo+1; k++){
+			for (var m=0; m<counterVideo+1; m++){
+			if (idVideoTerpilih[m] == daftarJudulVideo[k][1]){
+			document.getElementById('videoId'+idVideoTerpilih[m]+m).innerHTML = "<b>"+daftarJudulVideo[k][0]+"</b>";
+			document.getElementById('videoId'+idVideoTerpilih[m]+m).removeAttribute('id');
+			}
+			}
+			}
+			}
+			</script>
+
+			<script>
+			//cadangkan
+			function cadangkan(){
+			document.getElementById('isi2').removeAttribute('id');
+			cadang = document.createElement('div');
+			cadang.setAttribute("id", "isi2");
+
+			document.getElementById("badan2").appendChild(cadang);
+
+			delete cadang;
+
+			}
+			</script>
+
+
+			<script>
+			daftarHasilSearch = [];
+			banyakTabel = 1;
+			//SimpananArray
+			  
+			function buatTabel(){
+
+
+			isiVideo = '';
+			idVideoTerpilih = [];
+			counterVideo = -1
+			for (var m=0; m<5; m++){
+			isiVideo += '<tr>';
+			for (var k=0; k<3; k++){
+			counterVideo ++;
+			chanssRanVid = videoIdLists;
+			chanssRanVid = chanssRanVid.concat(daftarHasilSearch);
+			 pilihlinkRandVid = chanssRanVid[Math.floor(Math.random()*chanssRanVid.length)];
+			isiVideo += '<td style="vertical-align:top;"><div><iframe id="player" width="345" height="236" src="https://www.youtube.com/embed/' + pilihlinkRandVid + '" frameborder="0" allowfullscreen></iframe><br><span style="font-family:arial;font-size:24px;" id="videoId'+pilihlinkRandVid+counterVideo+'"></span><br><a href ="https://www.youtube.com/watch?v='+pilihlinkRandVid+'" target="_blank"><button class="btn">Watch on YouTube</button></a></div></td>';
+
+			idVideoTerpilih.push(pilihlinkRandVid)
+
+			}
+			isiVideo += '</tr>';
+			}
+			document.getElementById('isi2').innerHTML += '<table width="350" style="margin-left:auto;margin-right:auto;"><tr>'+isiVideo+'</tr></table>';
+
+			daftarJudulVideo = [];
+			for (var k=0; k<counterVideo+1; k++){
+			  var idVideoNya = idVideoTerpilih[k];
+			  $.getJSON('https://www.googleapis.com/youtube/v3/videos?id='+idVideoNya+'&key=AIzaSyA4BtfSNwqajVGODF8yzY_hNbfB4BLH1aM&part=snippet&callback=?',function(data){
+				if (typeof(data.items[0]) != "undefined") {   daftarJudulVideo.push([data.items[0].snippet.title,data.items[0].id]);
+			 if (daftarJudulVideo.length == 15){taruhJudul();}
+				   } else {
+					console.log('video not exists');
+				 }   
+				});
+			}
+
+			if (Math.random() < 1/2){
+				refreshDaftar = Math.ceil(Math.random()*banyakMathList);
+				$.getScript('https://cdn.jsdelivr.net/gh/swrdfgd/randYoutube/videoListsMath'+refreshDaftar+'.js');
+			  }
+
+			 
+
+			banyakTabel += 1;
+			cariVideo();
+			}
+
+			  pilihanWarna1 = getRandomColor();
+				pilihanWarna2 = getRandomColor();
+				pilihanWarna3 = getRandomColor();
+				document.getElementById('tambah2').innerHTML = '<button onclick="buatTabel();cadangkan();" class="btn" id="Tombol" onmouseover="document.getElementById(\'Tombol\').style.backgroundColor=\''+pilihanWarna2+'\';" onmouseout="document.getElementById(\'Tombol\').style.backgroundColor=\''+pilihanWarna3+'\';" style="background-color: '+pilihanWarna1+'">More...</button>';
+			  
+			buatTabel(); cadangkan();
+			</script>
+
+				<script>
+					daftarApi = ['AIzaSyBwwv3LrgSG3NcETgahW-3-_DyP74GwViA','AIzaSyB7TX3CfUSUBnWnNP9CGBjLzmfIeo6SpfM'];
+
+					function cariVideo(firstTime = true, nextPageToken = '', keyword = '', apiKey = '') {
+						if (apiKey ==''){apiKey = daftarApi[Math.floor(Math.random()*daftarApi.length)];}
+						if (keyword == ''){
+						keywordTaken = false;
+						while (!keywordTaken){
+							pilihanKeyword = daftarKata[Math.floor(Math.random()*daftarKata.length)];
+							if (pilihanKeyword.split(' ').length > 1){
+								for (let i = 0; i < pilihanKeyword.split(' ').length; i++){
+									if (Math.random() < 1/2){keyword += pilihanKeyword.split(' ')[i] + ' ';}
+								}
+							}
+							else{
+							keyword += pilihanKeyword + ' '
+							}
+							if (Math.random() < 1/2){keywordTaken = true;}
+							if (keyword.length == 0){keywordTaken = false;}
+						}
+						keyword = encodeURIComponent(keyword)
+						}
+						let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${Math.ceil(Math.random()*50)}&q=${keyword}&key=${apiKey}`;
+						if (nextPageToken !== ''){url += `&pageToken=${nextPageToken}`;}
+						
+						console.log(url);
+						fetch(url)
+							.then(response => response.json())
+							.then(data => {
+								nextPageToken = data.nextPageToken;
+								if (nextPageToken !== null && Math.random() < 1/50){cariVideo(firstTime, nextPageToken, keyword, apiKey); return}
+								const videoIds = [];
+								
+								data.items.forEach(item => {
+									if (item.id.kind === 'youtube#video') {
+										daftarHasilSearch.push(item.id.videoId);
+									}
+								});
+								
+
+							})
+							.catch(error => {
+								if (firstTime == true){};
+								console.error('Terjadi kesalahan:', error);
+							});
+					}
+					cariVideo();
+
+			 
+				</script>
+        </section>
+	<!-- Akhir seksi 3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->		
+		
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
