@@ -119,7 +119,7 @@
 </head>
 <body>
     <header>
-        <div class="separator" style="display: block; padding: 1em 0px; text-align: center;"><img  alt="" border="0" data-original-height="500" data-original-width="2292" src="mathzpace.png" width="640" /></div>
+        <div class="separator" style="display: block; padding: 1em 0px; text-align: center;"><img  alt="" border="0" data-original-height="500" data-original-width="2292" src="mathzpace.png" width="640" style="max-width: 100%; height: auto;" /></div>
     </header>
     <nav>
         <a href="#seksi1">Math Sites</a>
@@ -185,14 +185,14 @@
 			</style>
 
 			<div class = "container2">
-			<a  onclick="gantiWiki();" id="menu1" target="_blank" class="item link-url" href="https://en.wikipedia.org/wiki/Special:RandomInCategory/Mathematics">Wikipedia</a>
+			<a onclick="gantiWiki();" id="menu1" target="_blank" class="item link-url" href="https://en.wikipedia.org/wiki/Special:RandomInCategory/Mathematics">Wikipedia</a>
 			<a id="menu2" target="_blank" class="item link-url" href="https://mathworld.wolfram.com/cgi-bin/random.cgi">MathWorld</a>
 			<a id="menu3" target="_blank" class="item link-url" href="https://artofproblemsolving.com/wiki/index.php/Special:Random">Art of Problem Solving</a>
 			<a id="menu4" target="_blank" class="item link-url" href="https://math.stackexchange.com/" onclick="document.getElementById('menu4').setAttribute('href','https://math.stackexchange.com/questions/'+Math.ceil(Math.random()*4592806));">Math Stack Exchange</a>
 			<a id="menu5" target="_blank" class="item link-url" href="https://mathoverflow.net/" onclick="document.getElementById('menu5').setAttribute('href','https://mathoverflow.net/questions/'+Math.ceil(Math.random()*447178));">MathOverflow</a>
 			<a id="menu6" target="_blank" class="item link-url" href="https://proofwiki.org/wiki/Special:Random" >ProofWiki</a>
 			<a id="menu7" target="_blank" class="item link-url" href="https://encyclopediaofmath.org/wiki/Special:Random" >Encyclopedia of Mathematics</a>
-			<a   id="menu8" target="_blank" class="item link-url" href="https://handwiki.org/wiki/special:RandomInCategory/Mathematics">HandWiki</a>
+			<a id="menu8" target="_blank" class="item link-url" href="https://handwiki.org/wiki/special:RandomInCategory/Mathematics">HandWiki</a>
 			</div>
 			<br />
 
@@ -295,16 +295,6 @@
 			}
 			//------------------------------------------------------------------------------------------------
 
-			//fungsi hex random------------------------------------------------------------------------------
-			function genHexString(len) {
-				const hex = '0123456789abcdef';
-				let output = '';
-				for (let i = 0; i < len; ++i) {
-					output += hex.charAt(Math.floor(Math.random() * hex.length));
-				}
-				return output;
-			}
-			//------------------------------------------------------------------------------------------------
 			</script>
 
 			<script>
@@ -356,7 +346,7 @@
 			
 			  pilihanWarna1 = getRandomColor();
 				pilihanWarna2 = getRandomColor();
-				pilihanWarna3 = getRandomColor();
+		      pilihanWarna3 = getRandomColor();
 				document.getElementById('tambah').innerHTML = '<button onclick="buatTabel()" class="myButton" id="Tombol" onmouseover="document.getElementById(\'Tombol\').style.backgroundColor=\''+pilihanWarna2+'\';" onmouseout="document.getElementById(\'Tombol\').style.backgroundColor=\''+pilihanWarna3+'\';" style="background-color: '+pilihanWarna1+'">More...</button>';
 			  
 			buatTabel();
@@ -515,45 +505,6 @@
 			}
 			//------------------------------------------------------------------------------------------------
 
-			//fungsi string random lower case dan bilangan---------------------------------------------------------------------------------------------------------------------
-			function randstringLNum(length) {
-				var result           = '';
-				var characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
-				var charactersLength = characters.length;
-				for ( var i = 0; i < length; i++ ) {
-				  result += characters.charAt(Math.floor(Math.random() * 
-			 charactersLength));
-			   }
-			   return result;
-			}
-			//------------------------------------------------------------------------------------------------
-
-			//fungsi string random upper case dan bilangan---------------------------------------------------------------------------------------------------------------------
-			function randstringUNum(length) {
-				var result           = '';
-				var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-				var charactersLength = characters.length;
-				for ( var i = 0; i < length; i++ ) {
-				  result += characters.charAt(Math.floor(Math.random() * 
-			 charactersLength));
-			   }
-			   return result;
-			}
-			//------------------------------------------------------------------------------------------------
-			  
-			//fungsi string random lowercase------------------------------------------------------------------------------
-			function randstringLowCase(length) {
-				var result           = '';
-				var characters       = 'abcdefghijklmnopqrstuvwxyz';
-				var charactersLength = characters.length;
-				for ( var i = 0; i < length; i++ ) {
-				  result += characters.charAt(Math.floor(Math.random() * 
-			 charactersLength));
-			   }
-			   return result;
-			}
-			//------------------------------------------------------------------------------------------------
-			  
 			//fungsi google book random id------------------------------------------------------------------------------
 			function getRandomBookId() {
 			  var lettersz = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_';
