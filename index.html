@@ -637,6 +637,145 @@
 				
         </section>
 	<!-- Akhir seksi 3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->		
+
+	<!-- Wallpaper mod ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<canvas id="plotCanvas" width="1000" height="500" hidden></canvas>
+  
+  <script>
+    function rndNum() {
+	  return Math.floor(1/(1-Math.random())) - 1
+    }
+  </script>
+  
+  <script>
+	function randFunc(deep){
+		deep = deep - 1
+		var mode = Math.ceil(Math.random()*3);
+		if (mode == 1 || deep == 0){
+			return [rndNum(),'x','y'][Math.floor(Math.random()*3)];
+		}
+		if (mode == 2){
+			return "Math." + ['exp','log','sin','cos','tan','asin','acos','atan','sinh','cosh','tanh','asinh','acosh','atan'][Math.floor(Math.random()*14)] + "(" + randFunc(deep) + ") ";
+		}
+		if (mode == 3){
+			return "(" + randFunc(deep) + ['+','-','*','/','**'][Math.floor(Math.random()*5)] + randFunc(deep) + ") ";
+		}
+	}
+  </script>
+  <script>
+	function funcEval(fungsi, x, y){
+		eval(fungsi)
+	}
+  
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get the canvas element
+      const canvas = document.getElementById('plotCanvas');
+      const ctx = canvas.getContext('2d');
+
+      // Define implicit function
+      function implicitFunction(x, y) {
+		x = 10*x;
+		y = 10*y
+        return Math.tan(x+y) - x - y; // Example: Circle with radius 1
+      }
+
+      // Draw the implicit function on the canvas
+	  const delay = ms => new Promise(res => setTimeout(res, ms));
+	  
+      async function drawImplicitFunction() {
+		fungsiRandom = randFunc(Math.floor(1/(1-Math.random())));
+		eval('function implicitFunction(x, y){return '+ fungsiRandom +'}');
+		console.log(fungsiRandom);
+		var epsilon = ((1/(1-Math.random())) - 1) / (1/(1-Math.random()));
+		var style = Math.ceil(Math.random()*6);
+		if (style >= 5){
+			hue1 = Math.floor(Math.random()*361); s1 = 101 - Math.floor((1/(1-Math.random()))); l1 = 50;
+			if (Math.random() < 1/2){l1 = l1 + ((-1)**Math.floor(Math.random()*2))*Math.floor((1/(1-Math.random())))}
+			hue2 = Math.floor(Math.random()*361); s2 = 101 - Math.floor((1/(1-Math.random()))); l2 = 50;
+			if (Math.random() < 1/2){l2 = l2 + ((-1)**Math.floor(Math.random()*2))*Math.floor((1/(1-Math.random())))}
+			epsilon2 = ((1/(1-Math.random())) - 1) / (1/(1-Math.random()));
+			epsilon3 = ((1/(1-Math.random())) - 1) / (1/(1-Math.random()));
+		}
+		console.log(style);
+        const step = 2 / canvas.width;
+		count = 1
+        for (let x = -1; x <= 1; x += step) {
+          for (let y = -1; y <= 1; y += step) {
+		    count = (count+1)%1000;
+		    if (count == 0){await delay(1);}
+            const value = implicitFunction(x, y);
+			if (style == 1){
+				color = Math.abs(value) < epsilon  ? 'black' : 'white'; // Choose color based on function value
+            }
+			if (style == 2){
+				color = Math.abs(value) < ((1/(1-Math.random())) - 1) / (1/(1-Math.random()))  ? 'black' : 'white'; // Choose color based on function value
+            }
+			if (style == 3){
+				abu = Math.min(255,Math.abs(value)*255/epsilon)
+				color = `rgb(${abu},${abu},${abu})`
+            }
+			if (style == 4){
+				epsilon = ((1/(1-Math.random())) - 1) / (1/(1-Math.random()));
+				abu = Math.min(255,Math.abs(value)*255/epsilon)
+				color = `rgb(${abu},${abu},${abu})`
+            }
+			if (style == 5){
+				hue = (hue1 + (hue2-hue1)*Math.abs(value)/epsilon)%361;
+				if (Math.abs(value) >= epsilon){hue = hue2;}
+				s = s1 + (s2-s1)*Math.abs(value)/epsilon2;
+				if (s < 0){s = 0}
+				if (s > 100){s = 100}
+				l = l1 + (l2-l1)*Math.abs(value)/epsilon3;
+				if (l < 0){l = 0}
+				if (l > 100){l = 100}
+				color = `hsl(${hue},${s}%,${l}%)`
+            }
+			if (style == 6){
+				epsilon = ((1/(1-Math.random())) - 1) / (1/(1-Math.random()));
+				epsilon2 = ((1/(1-Math.random())) - 1) / (1/(1-Math.random()));
+				epsilon3 = ((1/(1-Math.random())) - 1) / (1/(1-Math.random()));
+				hue = (hue1 + (hue2-hue1)*Math.abs(value)/epsilon)%361;
+				if (Math.abs(value) >= epsilon){hue = hue2;}
+				s = s1 + (s2-s1)*Math.abs(value)/epsilon2;
+				if (s < 0){s = 0}
+				if (s > 100){s = 100}
+				l = l1 + (l2-l1)*Math.abs(value)/epsilon3;
+				if (l < 0){l = 0}
+				if (l > 100){l = 100}
+				color = `hsl(${hue},${s}%,${l}%)`
+            }
+			ctx.fillStyle = color;
+            ctx.fillRect((x + 1) * canvas.width / 2, (1 - y) * canvas.height / 2, 1, 1);
+			
+          }
+        }
+		var dataURL = canvas.toDataURL();
+		document.body.style.background = "url("+dataURL+")";
+		document.body.style.backgroundSize = "100% 100vh";
+		document.body.style.backgroundRepeat = "no-repeat";
+		document.body.style.backgroundAttachment = "fixed";
+      }
+
+      // Clear the canvas
+      function clearCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+
+      // Redraw the implicit function when the page loads
+      drawImplicitFunction();
+
+      // Optionally, you can add interactivity or redraw the function on user actions
+      // For example, redraw the function when the canvas is clicked
+      //canvas.addEventListener('click', function() {
+      //  clearCanvas();
+      //  drawImplicitFunction();
+      //});
+    });
+  </script>		
+	<!-- Wallpaper mod ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 		
     </main>
     <footer>
