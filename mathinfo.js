@@ -9,5 +9,16 @@ mathInfo = [
 "<b>Trisecting the Angle</b> and <b>Doubling the Cube</b> are generally impossible only by using ruler and compass.",
 "Area of a circle = \\(\\pi \\) × (radius)<sup>2</sup>.",
 "The Euler\'s totient function \\(\\varphi \\) for integer \\(m\\) is defined as the number of non-negative integers less than and coprime to \\(m\\).<br><b>Euler Generalisation of Fermat's Little Theorem:</b> Let \\(a\\) and \\(m\\) be coprime. Then \\(a^{\\varphi \\left ( m \\right )} \\equiv 1 \\left ( \\text{mod } m \\right ) \\).",
+"<b>The Infinitude of Primes:</b> There are infinitely many of prime numbers.",
+"In Euclidean geometry, the parallel postulate cannot be derived from the other axioms.",
+"<b>The Euler's Polyhedron Formula:</b> For any convex polyhedron, the number of vertices and faces together is exactly two more than the number of edges. Symbolically \\(V - E + F = 2\\).",
+"<b>The Basel Problem:</b><br>\\( \\sum_{n \\mathop = 1}^\\infty {\\frac 1 {n^2} } = \\frac{1}{1^2} + \\frac{1}{2^2} + \\frac{1}{3^2} + \\cdots = \\frac {\\pi^2} 6 \\).",
+"<b>Fundamental Theorem of Calculus, Part 1:</b><br>If \\(f\\) is continuous over an interval \\(\\left [ a,b \\right ] \\), and the function \\(F\\) is defined by<br>\\( F \\left( x \\right) = \\int_{a}^{x} f \\left( t \\right) dt \\) for every \\( x \\in \\left [ a,b \\right ] \\),<br>then \\( F' \\left( x \\right) = f \\left( x\\right) \\) over \\(\\left [ a,b \\right ] \\).",
+"<b>Fundamental Theorem of Calculus, Part 2:</b><br>If \\(f\\) is continuous over the interval \\( \\left [ a,b \\right ] \\) and \\(F\\) is any antiderivative of \\(f\\), then<br>\\( \\int_{a}^{b} f \\left( x \\right) dx = F \\left( b \\right) - F \\left( a \\right) \\).",
+"<b>The Abel–Ruffini Theorem:</b> There is no solution in radicals to general polynomial equations of degree five or higher with arbitrary coefficients.",
+"<b>De Moivre's Formula:</b> For any real number \\(x\\), we have<br>\\(\\left( \\cos x + i \\sin x \\right) ^n = \\cos \\left( nx \\right) + i \\sin \\left( nx \\right)\\).",
+"Liouville's constant, sometimes also called Liouville's number, is the real number defined by<br>\\(L=\\sum_{n=1}^{\\infty} 10^{-n!} = 0.110001000000000000000001\\cdots \\)<br>is a transcendental number.",
+"<b>The Liouville's Number Theorem:</b> Let \\(x\\) be an irrational number that is algebraic of degree \\(n\\).<br>Then there exists a constant \\(c>0\\) (which can depend on \\(x\\)) such that:<br>\\( \\left| x - \\frac{p}{q} \\right| \\geq \\frac{c}{q^n} \\)<br> for every pair \\(p,q \\in \\mathbb{Z} \\) with \\(q \\neq 0 \\)",
+"<b>Lagrange's Four-Square Theorem:</b> Every positive integer can be written as the sum of at most four squares.",
 
 ]
