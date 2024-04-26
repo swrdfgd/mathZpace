@@ -20,5 +20,13 @@ mathInfo = [
 "Liouville's constant, sometimes also called Liouville's number, is the real number defined by<br>\\(L=\\sum_{n=1}^{\\infty} 10^{-n!} = 0.110001000000000000000001\\cdots \\)<br>is a transcendental number.",
 "<b>The Liouville's Number Theorem:</b> Let \\(x\\) be an irrational number that is algebraic of degree \\(n\\).<br>Then there exists a constant \\(c>0\\) (which can depend on \\(x\\)) such that:<br>\\( \\left| x - \\frac{p}{q} \\right| \\geq \\frac{c}{q^n} \\)<br> for every pair \\(p,q \\in \\mathbb{Z} \\) with \\(q \\neq 0 \\)",
 "<b>Lagrange's Four-Square Theorem:</b> Every positive integer can be written as the sum of at most four squares.",
+"<b>Genus Theorem:</b> And odd prime \\(p\\) can be expressed as<br>\\(p=x^2+y^2\\) with \\(x\\) and \\(y\\) integers, if and only if<br>\\(p \\equiv 1 \\text{(mod 4)}\\).",
+"<b>Green's Theorem:</b> Let \\(C\\) be a positively oriented, piecewise smooth, simple closed curve in a plane, and let \\(D\\) be the region bounded by \\(C\\). If \\(L\\) and \\(M\\) are functions of \\( \\left ( x,y \\right ) \\) defined on an open region containing \\(D\\) and have continuous partial derivatives there, then<br>\\(\\oint_{C}^{} \\left( Ldx+Mdy \\right) = \\iint_D \\left( \\frac{\\partial M}{\\partial x} -\\frac{\\partial L}{\\partial y} \\right) \\)<br>where the path of integration along \\(C\\) is anticlockwise.",
+"The continuum (\\(\\mathbb{R}\\)) is not denumerable.",
+"<b>Formula for Pythagorean Triples:</b> Let \\(n\\) and \\(m\\) be integers, \\(n > m\\). Then \\(n^2 - m^2\\), \\(2nm\\), and \\(n^2 + m^2\\) always form a Pythagorean triple.",
+"The continuum hypothesis is undecidable.",
+"<b>Schroeder-Bernstein Theorem:</b> If there exist injective functions \\(f:A\\to B\\) and \\(g:B\\to A\\) between the sets \\(A\\) and \\(B\\), then there exists a bijective function \\(h:A\\to B\\).",
+"<b>Leibniz Series for \\(pi\\):</b><br>\\(\\frac{\\pi}{4} = 1 - \\frac{1}{3} + \\frac{1}{5} - \\frac{1}{7} + \\frac{1}{9} - \\cdots = \\sum_{k=0}^{\\infty} \\frac{\\left( -1 \\right)^k}{2k+1}\\).",
+"In Euclidean space, the sum of angles of a triangle equals the straight angle (\\(180^{\\circ}\\), \\(\\pi\\) radians, two right angles, or a half-turn).",
 
 ]
