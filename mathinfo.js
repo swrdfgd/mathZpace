@@ -26,7 +26,7 @@ mathInfo = [
 "<b>Formula for Pythagorean Triples:</b> Let \\(n\\) and \\(m\\) be integers, \\(n > m\\). Then \\(n^2 - m^2\\), \\(2nm\\), and \\(n^2 + m^2\\) always form a Pythagorean triple.",
 "The continuum hypothesis is undecidable.",
 "<b>Schroeder-Bernstein Theorem:</b> If there exist injective functions \\(f:A\\to B\\) and \\(g:B\\to A\\) between the sets \\(A\\) and \\(B\\), then there exists a bijective function \\(h:A\\to B\\).",
-"<b>Leibniz Series for \\(pi\\):</b><br>\\(\\frac{\\pi}{4} = 1 - \\frac{1}{3} + \\frac{1}{5} - \\frac{1}{7} + \\frac{1}{9} - \\cdots = \\sum_{k=0}^{\\infty} \\frac{\\left( -1 \\right)^k}{2k+1}\\).",
+"<b>Leibniz Series for \\(\\pi\\):</b><br>\\(\\frac{\\pi}{4} = 1 - \\frac{1}{3} + \\frac{1}{5} - \\frac{1}{7} + \\frac{1}{9} - \\cdots = \\sum_{k=0}^{\\infty} \\frac{\\left( -1 \\right)^k}{2k+1}\\).",
 "In Euclidean space, the sum of angles of a triangle equals the straight angle (\\(180^{\\circ}\\), \\(\\pi\\) radians, two right angles, or a half-turn).",
 
 ]
