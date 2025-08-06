@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mathZpace</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <script src="daftarKategori.js"></script>
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: linear-gradient(to bottom right, #f0f0f0, #d0d0ff);
+    }
+
+    header {
+      background: white;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+
+    header img {
+      height: 200px;
+      margin-right: 1rem;
+      max-width: 100%;
+    }
+
+    .container {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 200px;
+      background: #222;
+      color: white;
+      padding: 1rem;
+    }
+
+    main {
+      flex: 1;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .math-button {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      color: white;
+      font-size: 1.25rem;
+      font-weight: bold;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+      text-shadow: 2px 2px 4px black;
+      transition: background-color 0.3s ease, filter 0.3s ease;
+    }
+
+    .math-button:hover {
+      filter: brightness(1.2);
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      padding: 1rem;
+      text-align: left;
+    }
+
+    .blog-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .blog-links a {
+      margin: 0.3rem 0;
+      color: #aaf;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .blog-links a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        text-align: center;
+      }
+      main {
+        grid-template-columns: 1fr;
+      }
+      header img {
+        height: 50px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header img {
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo mathZpace">
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <ul>
+        <li><a href="https://swrdfgd.github.io/KiankoLand/" style="color: white">Kianko Land</a></li>
+        <li><a href="https://swrdfgd.github.io/LandOfKnowledge/" style="color: white">Land of Knowledge</a></li>
+        <li><a href="https://swrdfgd.github.io/LandOfKindness/" style="color: white">Land of Kindness</a></li>
+      </ul>
+    </aside>
+
+    <main id="main-content">
+      <!-- Buttons will be inserted here -->
+    </main>
+  </div>
+
+  <footer>
+    <div class="blog-links" id="blog-links0"></div>
+	<div class="blog-links" id="blog-links1"></div>
+	<div class="blog-links" id="blog-links2"></div>
+	<div class="blog-links" id="blog-links3"></div>
+  </footer>
+
+  <script>
+	
+    const mathLinks = [
+      { title: "Khan Academy", url: "https://www.khanacademy.org/math" },
+      { title: "Brilliant", url: "https://brilliant.org" },
+      { title: "Desmos", url: "https://www.desmos.com" },
+      { title: "Wolfram Alpha", url: "https://www.wolframalpha.com" },
+      { title: "Art of Problem Solving", url: "https://artofproblemsolving.com/wiki/index.php/Special:Random" },
+      { title: "Paul's Online Math Notes", url: "http://tutorial.math.lamar.edu" },
+      { title: "Stack Exchange Mathematics", url: `https://math.stackexchange.com/questions/${1+Math.floor(Math.random()*5088351)}` },
+      { title: "GeoGebra", url: "https://www.geogebra.org" },
+      { title: "MIT OpenCourseWare", url: "https://ocw.mit.edu" },
+      { title: "Coursera Math", url: "https://www.coursera.org/browse/math-and-logic" },
+	  { title: "Mathsolar", url: `https://www.mathsolar.com/posting/${1+Math.floor(Math.random()*10571)}` },
+	  { title: "Random Math Keywords", url: `https://swrdfgd.github.io/MathKeywords/` },
+	  { title: "Random Math Videos", url: `https://swrdfgd.github.io/RandomMathVideos/` },
+	  { title: "Trivial Math Practice", url: `https://amctrivial.com/` },
+	  { title: "Scribd", url: `https://www.scribd.com/doc/${1+Math.floor(Math.random()*872322427)}` },
+	  { title: "Wikipedia", url: `https://en.wikipedia.org/wiki/Special:RandomInCategory?wpcategory=${daftarKategori[Math.floor(Math.random() * daftarKategori.length)][0]}` },
+	  { title: "ProofWiki", url: `https://proofwiki.org/wiki/Special:Random` },
+	  { title: "Encyclopedia of Mathematics", url: `https://encyclopediaofmath.org/wiki/Special:Random` },
+	  
+    ];
+
+
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+	function shuffleArray(array) {
+	  const newArray = [...array];
+	  for (let i = newArray.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+	  }
+	  return newArray;
+	}
+	
+	function newLinkGen(title, index){
+		if (title == 'Mathsolar'){
+			if (Math.random() < 0.5){
+				document.getElementById(`math-button-${index + 1}`).href = `https://www.mathsolar.com/posting/${1+Math.floor(Math.random()*10571)}`;
+			}
+			else {
+				document.getElementById(`math-button-${index + 1}`).href = `https://www.mathsolar.com/materi/${1+Math.floor(Math.random()*310)}`;
+			}
+			return
+		}
+		if (title == 'Stack Exchange Mathematics'){
+			document.getElementById(`math-button-${index + 1}`).href = `https://math.stackexchange.com/questions/${1+Math.floor(Math.random()*5088351)}`;
+			return
+		}
+		if (title == 'Scribd'){
+			document.getElementById(`math-button-${index + 1}`).href = `https://www.scribd.com/doc/${1+Math.floor(Math.random()*872322427)}`;
+			return
+		}
+		if (title == 'Wikipedia'){
+			document.getElementById(`math-button-${index + 1}`).href = `https://en.wikipedia.org/wiki/Special:RandomInCategory?wpcategory=${daftarKategori[Math.floor(Math.random() * daftarKategori.length)][0]}`;
+			return
+		}
+	}
+
+    function generateButtons() {
+      const shuffledLinks = shuffleArray([...mathLinks]);
+      const mainContent = document.getElementById("main-content");
+      shuffledLinks.slice(0, 10).forEach((link, index) => {
+        const anchor = document.createElement("a");
+        anchor.href = link.url;
+        anchor.target = "_blank";
+        anchor.id = `math-button-${index + 1}`;
+
+        const btn = document.createElement("button");
+        btn.textContent = link.title;
+        btn.className = "math-button";
+		btn.id = `math-btn-${index + 1}`;
+        btn.style.backgroundColor = getRandomColor();
+		btn.onclick = () => newLinkGen(link.title, index);
+
+        anchor.appendChild(btn);
+        mainContent.appendChild(anchor);
+      });
+    }
+
+
+    window.onload = () => {
+      generateButtons();
+    };
+  </script>
+  
+  <script>
+	var maxResults = 1,
+		daftarweb = ['https://pak-anang.blogspot.com/',
+		'https://www.defantri.com/',
+		'https://www.folderosn.com/',
+		],
+		homePage = [];
+		countContainerId = 0,
+		containerId = 'blog-links';
+	function getRandomInt(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+
+	function ArlinaRandomPosts(json) {
+		var startIndex = getRandomInt(1, (json.feed.openSearch$totalResults.$t - maxResults));
+		// console.log('Get the post feed start from ' + startIndex + ' until ' + (startIndex + maxResults));
+		document.write('<scr' + 'ipt src="' + homePage[countContainerId] + '/feeds/posts/summary?alt=json-in-script&orderby=updated&start-index=' + startIndex + '&max-results=' + maxResults + '&callback=randomPosts"></scr' + 'ipt>');
+	}
+	function randomPosts(json) {
+		var link, ct = document.getElementById(containerId),
+			entry = shuffleArray(json.feed.entry),
+			skeleton = "<ul>";
+			countContainerId++;
+			containerId = 'blog-links' + countContainerId;
+			
+		for (var i = 0, len = entry.length; i < len; i++) {
+			for (var j = 0, jen = entry[i].link.length; j < jen; j++) {
+				link = (entry[i].link[j].rel == "alternate") ? entry[i].link[j].href : '#';
+			}
+			skeleton += '<li><a href="' + link + '" target="_blank">' + entry[i].title.$t + '</a></li>';
+
+		}
+		ct.innerHTML = skeleton + '</ul>';
+	}
+	for (var i = 0; i < 4; i++){
+		containerId = 'blog-links' + countContainerId;
+		pilihanweb = Math.floor(Math.random()*(daftarweb.length)),
+		homePage.push(daftarweb[pilihanweb]),
+		document.write('<scr' + 'ipt src="' + homePage[countContainerId] + '/feeds/posts/summary?alt=json-in-script&max-results=0&callback=ArlinaRandomPosts"></scr' + 'ipt>');
+	}
+  </script>
+  
+</body>
+</html>
