@@ -146,6 +146,14 @@
   </footer>
 
   <script>
+	function padNumber(num, m) {
+	  let str = num.toString();
+	  while (str.length < m) {
+		str = '0' + str;
+	  }
+	  return str;
+	}
+
 	
     const mathLinks = [
       { title: "Khan Academy", url: "https://www.khanacademy.org/math" },
@@ -166,7 +174,7 @@
 	  { title: "Wikipedia", url: `https://en.wikipedia.org/wiki/Special:RandomInCategory?wpcategory=${daftarKategori[Math.floor(Math.random() * daftarKategori.length)][0]}` },
 	  { title: "ProofWiki", url: `https://proofwiki.org/wiki/Special:Random` },
 	  { title: "Encyclopedia of Mathematics", url: `https://encyclopediaofmath.org/wiki/Special:Random` },
-	  { title: "Bounded Rationality", url: `https://bjlkeng.io/` },
+	  { title: "HAL Open Science", url: `https://hal.science/hal-${padNumber(1+Math.floor(Math.random()*5138794),8)}` },
 	  
     ];
 
@@ -209,6 +217,10 @@
 		}
 		if (title == 'Wikipedia'){
 			document.getElementById(`math-button-${index + 1}`).href = `https://en.wikipedia.org/wiki/Special:RandomInCategory?wpcategory=${daftarKategori[Math.floor(Math.random() * daftarKategori.length)][0]}`;
+			return
+		}
+		if (title == 'HAL Open Science'){
+			document.getElementById(`math-button-${index + 1}`).href = `https://hal.science/hal-${padNumber(1+Math.floor(Math.random()*5138794),8)}`;
 			return
 		}
 	}
