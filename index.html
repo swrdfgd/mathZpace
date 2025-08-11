@@ -7,6 +7,17 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
   <script src="daftarKategori.js"></script>
+  <script>
+  articleLinks = [];
+  banyakArticleLinks = 1;
+  checkdone = true;
+
+  while (Math.random() < 0.5 || checkdone){
+	document.write('<scr' + 'ipt src="articleLinks/articleLinks'+(1+Math.floor(Math.random()*banyakArticleLinks))+'.js"></scr' + 'ipt>');
+	checkdone = false
+  }
+	
+  </script>
   
   <style>
     body {
@@ -139,10 +150,13 @@
   </div>
 
   <footer>
-    <div class="blog-links" id="blog-links0"></div>
-	<div class="blog-links" id="blog-links1"></div>
-	<div class="blog-links" id="blog-links2"></div>
-	<div class="blog-links" id="blog-links3"></div>
+	<ul>
+    <li class="blog-links" id="blog-links0"></li>
+	<li class="blog-links" id="blog-links1"></li>
+	<li class="blog-links" id="blog-links2"></li>
+	<li class="blog-links" id="blog-links3"></li>
+	<li class="blog-links" id="blog-links4"></li>
+	</ul>
   </footer>
 
   <script>
@@ -162,7 +176,6 @@
       { title: "Desmos", url: "https://www.desmos.com" },
       { title: "Wolfram Alpha", url: "https://www.wolframalpha.com" },
       { title: "Art of Problem Solving", url: "https://artofproblemsolving.com/wiki/index.php/Special:Random" },
-      { title: "Paul's Online Math Notes", url: "http://tutorial.math.lamar.edu" },
       { title: "Stack Exchange Mathematics", url: `https://math.stackexchange.com/questions/${1+Math.floor(Math.random()*5088351)}` },
       { title: "GeoGebra", url: "https://www.geogebra.org" },
       { title: "MIT OpenCourseWare", url: "https://ocw.mit.edu" },
@@ -259,6 +272,7 @@
   </script>
   
   <script>
+	var sisip = Math.floor(Math.random()*5);
 	var maxResults = 1,
 		daftarweb = ['https://pak-anang.blogspot.com/',
 		'https://www.defantri.com/',
@@ -280,23 +294,30 @@
 	function randomPosts(json) {
 		var link, ct = document.getElementById(containerId),
 			entry = shuffleArray(json.feed.entry),
-			skeleton = "<ul>";
+			skeleton = "";
 			countContainerId++;
 			containerId = 'blog-links' + countContainerId;
-			
-		for (var i = 0, len = entry.length; i < len; i++) {
-			for (var j = 0, jen = entry[i].link.length; j < jen; j++) {
-				link = (entry[i].link[j].rel == "alternate") ? entry[i].link[j].href : '#';
+			if (countContainerId-1 == sisip){
+				pilihanSisip = articleLinks[Math.floor(Math.random()*articleLinks.length)];
+				link = pilihanSisip[1]
+				articleTitle = pilihanSisip[0]
 			}
-			skeleton += '<li><a href="' + link + '" target="_blank">' + entry[i].title.$t + '</a></li>';
-
-		}
-		ct.innerHTML = skeleton + '</ul>';
+			else{
+				for (var j = 0, jen = entry[0].link.length; j < jen; j++) {
+					link = (entry[0].link[j].rel == "alternate") ? entry[0].link[j].href : '#';
+				}
+				articleTitle = entry[0].title.$t;
+			}
+			skeleton += '<a href="' + link + '" target="_blank">' + articleTitle + '</a>';
+			ct.innerHTML = skeleton;
+		
+		
 	}
-	for (var i = 0; i < 4; i++){
+	
+	for (var i = 0; i < 5; i++){
 		containerId = 'blog-links' + countContainerId;
-		pilihanweb = Math.floor(Math.random()*(daftarweb.length)),
-		homePage.push(daftarweb[pilihanweb]),
+		pilihanweb = Math.floor(Math.random()*(daftarweb.length));
+		homePage.push(daftarweb[pilihanweb]);
 		document.write('<scr' + 'ipt src="' + homePage[countContainerId] + '/feeds/posts/summary?alt=json-in-script&max-results=0&callback=ArlinaRandomPosts"></scr' + 'ipt>');
 	}
   </script>
