@@ -188,7 +188,7 @@
 	  { title: "ProofWiki", url: `https://proofwiki.org/wiki/Special:Random` },
 	  { title: "Encyclopedia of Mathematics", url: `https://encyclopediaofmath.org/wiki/Special:Random` },
 	  { title: "HAL Open Science", url: `https://hal.science/hal-${padNumber(1+Math.floor(Math.random()*5138794),8)}` },
-	  { title: "EUDML", url: `https://eudml.org/doc/${1+Math.floor(Math.random()*32440)}` },
+	  { title: "EUDML", url: `https://eudml.org/doc/${1+Math.floor(Math.random()*64744)}` },
 	  { title: "JFMA", url: `https://ejournal2.undip.ac.id/index.php/jfma/index` },
 	  { title: "MIT Mathematics", url: `https://math.mit.edu/` },
 	  { title: "Alexander Postnikov", url: `https://math.mit.edu/~apost/` },
@@ -245,7 +245,7 @@
 			return
 		}
 		if (title == 'EUDML'){
-			document.getElementById(`math-button-${index + 1}`).href = `https://eudml.org/doc/${1+Math.floor(Math.random()*32440)}`;
+			document.getElementById(`math-button-${index + 1}`).href = `https://eudml.org/doc/${1+Math.floor(Math.random()*64744)}`;
 			return
 		}
 	}
