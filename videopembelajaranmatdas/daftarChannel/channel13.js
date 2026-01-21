@@ -1,0 +1,3 @@
+//channel: Simple Quant https://www.youtube.com/playlist?list=UU0XAI6FJeskfd-O0sI8odDg
+
+daftarIdYoutube = daftarIdYoutube.concat(['l3xNg_9FXIc','dnGJoOHfDBo','igXt9cX_nQs','VJkvPTY6kZw','aQZWdLHnBxQ','aBj7UNgxNmc','PBo9qRZkgcg','mB28Yvaa8J8','3MZxT5E-60Q','fo5OsiNitpo','qWzlb9jAxbA','wq2XJyHv6yU','OFGzHI_vkdw','DN9p-th9qkg','j1S9xraUShw','7hnJvHMVr1Y','BHPnUcGsA2k','b0f8XNBwOaI','puFhTRSIuV0','7pnFaaiN5x8','kx325ev4dFQ','z0c39cUGfPk','jVGhssqQKYQ','jVTKC71kCOI','FRNAdj1BsFo','OJLtDqdZTak','_C1BFcLJ2WQ','yGc0XO7vox8','cy66R6Vz35o']);
