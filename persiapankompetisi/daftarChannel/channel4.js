@@ -1,0 +1,3 @@
+//channel: Introduction to Linear Algebra https://www.youtube.com/playlist?list=PLYpVTXjEi1ocryECsRHKrOzryw8YamASj
+
+daftarIdYoutube = daftarIdYoutube.concat(['4WVBLRiudi8','WS_YT4vuV-I','XPtQ1nuOzVc','wTYfMvgcG6s','fRqkvk8LEvw','Ys7poEtVMgE','kiM3o7egX3k','Pd_aQGduo90','HrMJke2on9U','njjWbGjmJ3g','jHsojKVCzns','h-8JjNx8avo','1LXnF92yE7I','kZ3IMvT114U','vFu53LEswGc','DgkTeTWkikI','uOTLXBib3dE','ZQZZ3sD-pQs','mwIT5GQ9t30']);
