@@ -1,0 +1,3 @@
+//channel: LohQuality Mathematics https://www.youtube.com/playlist?list=UUGAFYzhWlolDyrAj4-3jShA
+
+daftarIdYoutube = daftarIdYoutube.concat(['Yf7yKeYyUiY','vUbd-hFtJnI','r4KDP-asaTA','-g-Tvuc_3wc','PPtRDnl3l-Y','p45A9cVRHIs','2-ijYemNdaM','jFkLncTq-4Q','R-s1ynoD4NQ','xHzDM7V8KEg','vua5EyN4-2A','DIA4z9S5HqQ','W2c2Ls9Rw7o','-7mwgAzI_PQ','HDRNZySqUR8','X0zeh6g_DD4','BL3jXKcxpGM','mKN9qlZ4XMU','MhzxTo0yxj4','8rCiBc45wew','jxyHr4zkTU0','gP2i_tM7hl0','xQUf38urCg8','1Tsy_hHcgAI','VceyOXUVrUw','YM1_hCjlfMk','Lt-WVy0F-VI','3WV8J-SCb6Y','bN8CPMsR0Xg','t1Bu3-mS4Sw','ASPQ27tlnbc','9mV_lJdYYes','LMgO4TUtALs','UN6Hz4relmw','U7fjEJ0jvlI']);
