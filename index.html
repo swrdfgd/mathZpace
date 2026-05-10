@@ -170,7 +170,44 @@
 	  }
 	  return str;
 	}
+	
+	async function fetchJSON(url) {
+		const res = await fetch(url);
+		if (!res.ok) throw new Error("Network error");
+		return res.json();
+	}
+	
+	async function getLatestQuestion() {
+	  //MathStackExchange
+	  newestData = await fetchJSON(
+			`https://api.stackexchange.com/2.3/questions?order=desc&sort=creation&site=math&pagesize=1`
+		  );
 
+		  if (!newestData.items.length) {
+			throw new Error("No questions on this site");
+		  }
+		  else{
+			maxIdStackExchange = newestData.items[0].question_id;
+		  }
+			
+	  //MathOverflow
+	  newestData = await fetchJSON(
+			`https://api.stackexchange.com/2.3/questions?order=desc&sort=creation&site=mathoverflow.net&pagesize=1`
+		  );
+
+		  if (!newestData.items.length) {
+			throw new Error("No questions on this site");
+		  }
+		  else{
+			maxIdMathOverflow = newestData.items[0].question_id;	 
+		  }
+
+	}
+	
+	maxIdStackExchange = 5135896;
+	maxIdMathOverflow = 511068;
+	getLatestQuestion();
+	
 	
     const mathLinks = [
       { title: "Khan Academy", url: "https://www.khanacademy.org/math" },
@@ -179,7 +216,8 @@
       { title: "Desmos", url: "https://www.desmos.com" },
       { title: "Wolfram Alpha", url: "https://www.wolframalpha.com" },
       { title: "Art of Problem Solving", url: "https://artofproblemsolving.com/wiki/index.php/Special:Random" },
-      { title: "Stack Exchange Mathematics", url: `https://math.stackexchange.com/questions/${1+Math.floor(Math.random()*5122519)}` },
+      { title: "Stack Exchange Mathematics", url: `https://math.stackexchange.com/questions/${1+Math.floor(Math.random()*maxIdStackExchange)}` },
+      { title: "MathOverflow", url: `https://mathoverflow.net/questions/${1+Math.floor(Math.random()*maxIdMathOverflow)}` },
       { title: "GeoGebra", url: "https://www.geogebra.org" },
       { title: "MIT OpenCourseWare", url: "https://ocw.mit.edu" },
 	  { title: "Mathsolar", url: `https://www.mathsolar.com/posting/${1+Math.floor(Math.random()*10571)}` },
@@ -203,6 +241,31 @@
 	  { title: "proofficial.id", url: `https://proofficial.id/` },
 	  { title: "Discord Rizmath", url: `https://discord.gg/awACQbWW8b` },
 	  { title: "Paper Models of Polyhedra", url: `https://polyhedra.net/` },
+	  { title: "Arxiv", url: `https://arxiv.org/` },
+	  { title: "Random Arxiv Article", url: `https://ar5iv.labs.arxiv.org/feeling_lucky` },
+	  { title: "The Stacks project", url: `https://stacks.math.columbia.edu/` },
+	  { title: "Number Theory Web", url: `http://www.numbertheory.org/` },
+	  { title: "Online Encyclopedia of Integer Sequences", url: `https://oeis.org/A${padNumber(1+Math.floor(Math.random()*999999),6)}` },
+	  { title: "NIST Digital Library of Mathematical Functions", url: `https://dlmf.nist.gov/` },
+	  { title: "Database of Ring Theory", url: `https://ringtheory.herokuapp.com/` },
+	  { title: "π-Base", url: `https://topology.pi-base.org/` },
+	  { title: "CatDat", url: `https://catdat.app/` },
+	  { title: "MathBases", url: `https://mathbases.org/` },
+	  { title: "Groupprops", url: `https://groupprops.subwiki.org/wiki/special:random` },
+	  { title: "Math Counterexamples", url: `https://www.mathcounterexamples.net/` },
+	  { title: "nLab", url: `https://ncatlab.org/nlab/show/HomePage` },
+	  { title: "Database for Number Fields", url: `http://galoisdb.math.upb.de/home` },
+	  { title: "Database of Local Fields", url: `https://math.la.asu.edu/~jj/localfields/` },
+	  { title: "Class Group Database", url: `https://service.mathematik.uni-kl.de/~numberfieldtables/index.html` },
+	  { title: "LMFDB", url: `https://www.lmfdb.org/` },
+	  { title: "Kerodon", url: `https://kerodon.net/` },
+	  { title: "Encyclopedia of Triangle Centers", url: `https://faculty.evansville.edu/ck6/encyclopedia/ETC.html` },
+	  { title: "Wolfram MathWorld", url: `https://mathworld.wolfram.com/cgi-bin/random.cgi` },
+	  { title: "Open Problem Garden", url: `http://www.openproblemgarden.org/` },
+	  { title: "The Knot Atlas", url: `https://katlas.org/wiki/Special:Random` },
+	  { title: "Univariate Distribution Relationships", url: `https://www.math.wm.edu/%7Eleemis/chart/UDR/UDR.html` },
+	  { title: "Algebra Homework Help", url: `https://www.algebra.com/` },
+	  { title: "MathTV", url: `https://www.mathtv.com/` },
     ];
 
 
@@ -235,7 +298,11 @@
 			return
 		}
 		if (title == 'Stack Exchange Mathematics'){
-			document.getElementById(`math-button-${index + 1}`).href = `https://math.stackexchange.com/questions/${1+Math.floor(Math.random()*5122519)}`;
+			document.getElementById(`math-button-${index + 1}`).href = `https://math.stackexchange.com/questions/${1+Math.floor(Math.random()*maxIdStackExchange)}`;
+			return
+		}
+		if (title == 'MathOverflow'){
+			document.getElementById(`math-button-${index + 1}`).href = `https://mathoverflow.net/questions/${1+Math.floor(Math.random()*maxIdMathOverflow)}`;
 			return
 		}
 		if (title == 'Scribd'){
@@ -254,9 +321,13 @@
 			document.getElementById(`math-button-${index + 1}`).href = `https://eudml.org/doc/${1+Math.floor(Math.random()*64744)}`;
 			return
 		}
+		if (title == 'Online Encyclopedia of Integer Sequences'){
+			document.getElementById(`math-button-${index + 1}`).href = `https://oeis.org/A${padNumber(1+Math.floor(Math.random()*999999),6)}`;
+			return
+		}
 	}
 	
-
+	buttonList = [];
     function generateButtons() {
       const shuffledLinks = shuffleArray([...mathLinks]);
       const mainContent = document.getElementById("main-content");
@@ -272,10 +343,15 @@
 		btn.id = `math-btn-${index + 1}`;
         btn.style.backgroundColor = getRandomColor();
 		btn.onclick = () => newLinkGen(link.title, index);
+		buttonList.push(btn)
 
         anchor.appendChild(btn);
         mainContent.appendChild(anchor);
       });
+	  
+	  for (const btn in buttonList) {
+		buttonList[btn].onclick();
+	  }
     }
 
 
@@ -290,6 +366,7 @@
 		daftarweb = ['https://pak-anang.blogspot.com/',
 		'https://www.defantri.com/',
 		'https://www.folderosn.com/',
+		'https://pronouncemath.blogspot.com/',
 		],
 		homePage = [];
 		countContainerId = 0,
