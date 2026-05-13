@@ -127,6 +127,39 @@
         height: 40px;
       }
     }
+	/* ===== LINK SECTION ===== */
+	#link-section {
+	  grid-column: 1 / -1;
+	  margin-bottom: 30px;
+	}
+
+	.judul-link {
+	  font-size: 28px;
+	  font-weight: bold;
+	  margin-bottom: 15px;
+	  text-align: center;
+	}
+
+	.link-list {
+	  display: flex;
+	  flex-direction: column;
+	  gap: 10px;
+	  align-items: center;
+	}
+
+	.link-list a {
+	  background: #1a73e8;
+	  color: white;
+	  padding: 10px 20px;
+	  border-radius: 8px;
+	  text-decoration: none;
+	  font-weight: bold;
+	  transition: 0.3s;
+	}
+
+	.link-list a:hover {
+	  background: #155ab6;
+	}
   </style>
 </head>
 <body>
@@ -137,15 +170,33 @@
   <div class="container">
     <aside class="sidebar">
       <ul>
-        <li><a href="https://swrdfgd.github.io/mathZpace/" style="color: white">Kembali</a></li>
+        <li><a href="https://swrdfgd.github.io/mathZpace/" style="color: white">🔙Back</a></li>
       </ul>
     </aside>
 
     <main id="main-content">
+		  <h1 class="judul-video">
+			Competitive Maths
+		  </h2>
+				<!--====== DAFTAR LINK ====== -->
+		<!--
+		<div id="link-section">
+		
+		  <h2 class="judul-link">
+			Daftar Isi
+		  </h2>
+		
+		  <div class="link-list">
+			<a href="#">Pembahasan Soal ONMIPA Wilayah</a>
+			<a href="#">Pembahasan Soal ONMIPA Nasional</a>
+		  </div>
+		
+		</div>
+		-->
 		<div id="video-section">
 
-		  <h2 class="judul-video">
-			Persiapan Kompetisi
+		  <h2 class="judul-link">
+			Video
 		  </h2>
 
 		  <div id="videoGrid"></div>
