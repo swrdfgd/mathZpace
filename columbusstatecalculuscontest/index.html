@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mathZpace</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <script>
+  daftarIdYoutube = [];
+  banyakChannel = 1;
+  checkdone = true;
+
+  while (Math.random() < 0.5 || checkdone){
+	document.write('<scr' + 'ipt src="daftarChannel/channel'+(1+Math.floor(Math.random()*banyakChannel))+'.js"></scr' + 'ipt>');
+	checkdone = false
+  }
+	
+  </script>
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: linear-gradient(to bottom right, #f0f0f0, #d0d0ff);
+    }
+
+    header {
+      background: white;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+
+    header img {
+      height: 200px;
+      margin-right: 1rem;
+      max-width: 100%;
+    }
+
+    .container {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 200px;
+      background: #222;
+      color: white;
+      padding: 1rem;
+    }
+
+    main {
+      flex: 1;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .math-button {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      color: white;
+      font-size: 1.25rem;
+      font-weight: bold;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+      text-shadow: 2px 2px 4px black;
+      transition: background-color 0.3s ease, filter 0.3s ease;
+    }
+
+    .math-button:hover {
+      filter: brightness(1.2);
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      padding: 1rem;
+      text-align: left;
+    }
+
+    .blog-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .blog-links a {
+      margin: 0.3rem 0;
+      color: #aaf;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .blog-links a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        text-align: center;
+      }
+      main {
+        grid-template-columns: 1fr;
+      }
+      header img {
+        height: 50px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header img {
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo mathZpace">
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <ul>
+        <li><a href="https://swrdfgd.github.io/mathZpace/" style="color: white">🔙Back</a></li>
+      </ul>
+    </aside>
+
+    <main id="main-content">
+		<div id="video-section">
+
+		  <h2 class="judul-video">
+			Columbus State Calculus Contest Archive
+		  </h2>
+			<p>Below is the collection of past exam papers and solutions from the annual Columbus State University Calculus Contest:</p>
+
+				<h3>Official Portal</h3>
+				<ul>
+					<li>
+						<a href="https://www.columbusstate.edu/math/tournament/previous-math-contest.php" target="_blank" rel="noopener noreferrer">
+							CSU Previous Math Contests - Main Archive
+						</a>
+					</li>
+				</ul>
+
+				<h3>Yearly Past Papers &amp; Solutions</h3>
+				<ul>
+					<li>
+						<strong>2014 (2nd Annual)</strong>
+						<ul>
+							<li><a href="https://www.columbusstate.edu/math/_docs/tournament/2014CalculusContestvVersionOne.pdf" target="_blank" rel="noopener noreferrer">Contest Questions (PDF)</a></li>
+							<li><a href="https://www.columbusstate.edu/math/_docs/tournament/2014CalculusSolutions.pdf" target="_blank" rel="noopener noreferrer">Solutions &amp; Answers (PDF)</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong>2015 (3rd Annual)</strong>
+						<ul>
+							<li><a href="https://www.columbusstate.edu/math/_docs/tournament/2015Preccalculusv1.pdf" target="_blank" rel="noopener noreferrer">Contest Questions (PDF)</a></li>
+							<li><a href="https://www.columbusstate.edu/math/_docs/tournament/2015CalculusContestSolvversiontwo.pdf" target="_blank" rel="noopener noreferrer">Solutions &amp; Answers (PDF)</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong>2016 (4th Annual)</strong>
+						<ul>
+							<li><a href="https://www.columbusstate.edu/math/_docs/tournament/2016CalculusContest.pdf" target="_blank" rel="noopener noreferrer">Contest Questions (PDF)</a></li>
+							<li><a href="https://www.columbusstate.edu/math/_docs/tournament/2016CalculusContestSolutions.pdf" target="_blank" rel="noopener noreferrer">Solutions &amp; Answers (PDF)</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong>2017 (5th Annual)</strong>
+						<ul>
+							<li><a href="https://www.columbusstate.edu/math/_docs/tournament/2017CalculusContestSolutions.pdf" target="_blank" rel="noopener noreferrer">Solutions &amp; Answers (PDF)</a></li>
+						</ul>
+					</li>
+				</ul>
+
+		</div>
+
+ 
+    </main>
+  </div>
+
+  <footer>
+	<ul>
+    <li class="blog-links" id="blog-links0"></li>
+	<li class="blog-links" id="blog-links1"></li>
+	<li class="blog-links" id="blog-links2"></li>
+	<li class="blog-links" id="blog-links3"></li>
+	<li class="blog-links" id="blog-links4"></li>
+	</ul>
+  </footer>
+
+  
+</body>
+</html>
