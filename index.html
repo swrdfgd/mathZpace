@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7489040722194951"
-     crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-7489040722194951">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7489040722194951" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-7489040722194951">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>mathZpace</title>
@@ -19,123 +18,326 @@
 	document.write('<scr' + 'ipt src="articleLinks/articleLinks'+(1+Math.floor(Math.random()*banyakArticleLinks))+'.js"></scr' + 'ipt>');
 	checkdone = false
   }
-	
+  </script>
+
+  <!-- Pindahkan Generator Background ke HEAD agar dieksekusi SEBELUM halaman dirender -->
+  <script>
+    function getRandomHex() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    function generateRandomGradient() {
+        let numberOfColors = 1;
+        while(Math.random() < 0.5 && numberOfColors < 5) {
+            numberOfColors++;
+        }
+
+        let generatedColors = [];
+        for(let i = 0; i < numberOfColors; i++) {
+            generatedColors.push(getRandomHex());
+        }
+
+        const gradientTypes = ['linear-gradient', 'radial-gradient', 'conic-gradient'];
+        const selectedType = gradientTypes[Math.floor(Math.random() * gradientTypes.length)];
+        
+        if (numberOfColors === 1) {
+            return generatedColors[0]; 
+        } else {
+            let randX = Math.floor(Math.random() * 101);
+            let randY = Math.floor(Math.random() * 101);
+
+            if (selectedType === 'linear-gradient') {
+                let randomAngle = Math.floor(Math.random() * 360);
+                return `linear-gradient(${randomAngle}deg, ${generatedColors.join(', ')})`;
+            } else if (selectedType === 'radial-gradient') {
+                return `radial-gradient(circle at ${randX}% ${randY}%, ${generatedColors.join(', ')})`;
+            } else if (selectedType === 'conic-gradient') {
+                let randomAngle = Math.floor(Math.random() * 360);
+                let conicColors = [...generatedColors];
+                if (Math.random() < 0.5) {
+                    conicColors.push(conicColors[0]);
+                }
+                return `conic-gradient(from ${randomAngle}deg at ${randX}% ${randY}%, ${conicColors.join(', ')})`;
+            }
+        }
+    }
+
+    // Eksekusi langsung dan suntikkan CSS ke halaman sebelum elemen body dibuat (Anti-Kedip)
+    const pageBackground = generateRandomGradient();
+    document.write(`<style>
+      body { 
+        background: ${pageBackground} !important; 
+        background-attachment: fixed !important; 
+      }
+    </style>`);
   </script>
   
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
   <style>
+    /* TEMA: Um sonho que pode dar certo! */
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      background: linear-gradient(to bottom right, #f0f0f0, #d0d0ff);
+      color: #333;
     }
 
+    /* HEADER & NAVIGASI BARU (Transparan, Menyatu dengan Background) */
     header {
-      background: white;
-      color: white;
-      padding: 1rem;
+      background: transparent;
+      border-bottom: none; 
+      box-shadow: none; 
+      padding: 2rem 1rem; 
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
     }
 
     header img {
-      height: 200px;
-      margin-right: 1rem;
+      height: 320px; /* Ukuran Logo Besar */
       max-width: 100%;
+      margin-bottom: 1.5rem;
+      /* Multiply menghilangkan warna putih pada background logo */
+      mix-blend-mode: multiply; 
+    }
+
+    /* Menu di bawah logo */
+    .header-nav {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .header-nav a {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      color: #333;
+      text-decoration: none;
+      padding: 8px 25px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-nav a:hover {
+      background: rgba(255, 255, 255, 0.95);
+      color: #ff477e;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     }
 
     .container {
       display: flex;
       flex: 1;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
     }
 
+    /* SIDEBAR */
     .sidebar {
-      width: 200px;
-      background: #222;
+      width: 250px;
+      background: rgba(40, 30, 60, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       color: white;
-      padding: 1rem;
+      padding: 1.5rem;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 2px 0 10px rgba(0,0,0,0.05);
     }
 
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 12px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      color: #ffd1dc !important;
+      transform: translateX(5px);
+    }
+
+    /* KONTEN UTAMA */
     main {
       flex: 1;
-      padding: 1rem;
+      padding: 2rem;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      align-content: start;
+    }
+
+    /* ANIMASI LOADING (Baru Ditambahkan) */
+    #loader {
+      grid-column: 1 / -1; /* Membuat loader menempati seluruh kolom */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      font-size: 1.5rem;
+      color: white;
+      font-weight: 600;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.5; transform: scale(0.98); }
+      50% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0.5; transform: scale(0.98); }
     }
 
     .math-button {
       width: 100%;
+      height: 100%;
+      min-height: 80px;
       padding: 1rem;
-      border: none;
-      color: white;
-      font-size: 1.25rem;
-      font-weight: bold;
-      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      text-shadow: 
+                -1px -1px 0 #000,  
+                 1px -1px 0 #000,
+                -1px  1px 0 #000,
+                 1px  1px 0 #000,
+                 0px  0px 4px rgba(0,0,0,0.8);
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 16px;
       cursor: pointer;
-      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-      text-shadow: 2px 2px 4px black;
-      transition: background-color 0.3s ease, filter 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
     .math-button:hover {
-      filter: brightness(1.2);
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
 
+    main a {
+      text-decoration: none;
+    }
+
+    /* FOOTER */
     footer {
-      background: #111;
+      background: rgba(30, 20, 50, 0.8);
+      backdrop-filter: blur(10px);
       color: white;
-      padding: 1rem;
+      padding: 2rem;
       text-align: left;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
     }
 
     .blog-links {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 15px;
+      border-radius: 12px;
+    }
+
+    .blog-links:empty {
+      display: none !important;
     }
 
     .blog-links a {
       margin: 0.3rem 0;
-      color: #aaf;
+      color: #ffb7b2;
       text-decoration: none;
       transition: color 0.3s ease;
+      font-size: 0.9rem;
     }
 
     .blog-links a:hover {
       color: #fff;
     }
 
-    @media (max-width: 768px) {
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
       .container {
         flex-direction: column;
       }
       .sidebar {
         width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         text-align: center;
+        box-sizing: border-box;
+      }
+      .sidebar a {
+        justify-content: center;
       }
       main {
-        grid-template-columns: 1fr;
-      }
-      header img {
-        height: 50px;
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (max-width: 480px) {
       header img {
-        height: 40px;
+        height: 150px;
+      }
+      .header-nav {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+      .header-nav a {
+        width: 80%;
+        text-align: center;
+      }
+      main {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Logo mathZpace">
+    <img src="mathzpace.png" alt="Logo mathZpace">
+    <nav class="header-nav">
+      <a href="https://swrdfgd.github.io/" target="_blank">swrdfgd Hub</a>
+      <a href="https://swrdfgd.github.io/Ma3" target="_blank">Mathree</a>
+      <a href="https://swrdfgd.github.io/RuangONMIPA/" target="_blank">Ruang ONMIPA</a>
+    </nav>
   </header>
 
   <div class="container">
@@ -143,35 +345,35 @@
       <ul>
         <li><a href="https://swrdfgd.github.io/" style="color: white">swrdfgd Hub</a></li>
 		<li><a href="https://swrdfgd.github.io/KiankoLand/" style="color: white">Kianko Land</a></li>
-        <li><a href="https://swrdfgd.github.io/LandOfKnowledge/" style="color: white"><img src="https://swrdfgd.github.io/knowg64.png" alt="Logo" style="height: 1.2em; width: auto; vertical-align: -0.2em; display: inline-block;">Land of Knowledge</a></li>
-        <li><a href="https://swrdfgd.github.io/LandOfKindness/" style="color: white"><img src="https://swrdfgd.github.io/kindg64.png" alt="Logo" style="height: 1.2em; width: auto; vertical-align: -0.2em; display: inline-block;">Land of Kindness</a></li>
-        <li><a href="https://swrdfgd.github.io/LandOfFreedom/" style="color: white"><img src="https://swrdfgd.github.io/freeg64.png" alt="Logo" style="height: 1.2em; width: auto; vertical-align: -0.2em; display: inline-block;">Land of Freedom</a></li>
-		<li><a href="videopembelajaranmatdas/index.html" style="color: white">Fundamental Maths</a></li>
+        <li><a href="https://swrdfgd.github.io/LandOfKnowledge/" style="color: white"><img src="https://swrdfgd.github.io/knowg64.png" alt="Logo" style="height: 1.2em; width: auto; vertical-align: -0.2em; display: inline-block; margin-right: 8px;">Land of Knowledge</a></li>
+        <li><a href="https://swrdfgd.github.io/LandOfKindness/" style="color: white"><img src="https://swrdfgd.github.io/kindg64.png" alt="Logo" style="height: 1.2em; width: auto; vertical-align: -0.2em; display: inline-block; margin-right: 8px;">Land of Kindness</a></li>
+        <li><a href="https://swrdfgd.github.io/LandOfFreedom/" style="color: white"><img src="https://swrdfgd.github.io/freeg64.png" alt="Logo" style="height: 1.2em; width: auto; vertical-align: -0.2em; display: inline-block; margin-right: 8px;">Land of Freedom</a></li>
+		<!--<li><a href="videopembelajaranmatdas/index.html" style="color: white">Fundamental Maths</a></li>
 		<li><a href="persiapankompetisi/index.html" style="color: white">Competitive Maths</a></li>
 		<li><a href="recreationalmath/index.html" style="color: white">Recreational Maths</a></li>
 		<li><a href="mathresearch/index.html" style="color: white">Math Research</a></li>
-		<li><a href="appliedmath/index.html" style="color: white">Applied Maths</a></li>
+		<li><a href="appliedmath/index.html" style="color: white">Applied Maths</a></li>-->
 		<li><a href="https://makh-log.blogspot.com/" style="color: white">MakhLog - Catatan Makhluk</a></li>
       </ul>
 	  <div class="iklanan" data-format="vertikal" style="display: flex; justify-content: center; align-items: center; margin: 20px auto; max-width: 100%; overflow: hidden;"></div>
     </aside>
 
     <main id="main-content">
-      <!-- Buttons will be inserted here -->
+      <!-- Element loading awal yang akan hilang setelah API selesai dimuat -->
+      <div id="loader">Loading. Be patient please. Thank you...</div>
 	</main>
-
-	
   </div>
 	
-	<div class="iklanan" data-format="horizontal" style="display: flex; justify-content: center; align-items: center; margin: 20px auto; max-width: 100%; overflow: hidden;"></div>
-    <script src="https://swrdfgd.github.io/iklanan.js"></script>
+  <div class="iklanan" data-format="horizontal" style="display: flex; justify-content: center; align-items: center; margin: 20px auto; max-width: 100%; overflow: hidden;"></div>
+  <script src="https://swrdfgd.github.io/iklanan.js"></script>
+  
   <footer>
 	<ul>
-    <li class="blog-links" id="blog-links0"></li>
-	<li class="blog-links" id="blog-links1"></li>
-	<li class="blog-links" id="blog-links2"></li>
-	<li class="blog-links" id="blog-links3"></li>
-	<li class="blog-links" id="blog-links4"></li>
+      <li class="blog-links" id="blog-links0"></li>
+	  <li class="blog-links" id="blog-links1"></li>
+	  <li class="blog-links" id="blog-links2"></li>
+	  <li class="blog-links" id="blog-links3"></li>
+	  <li class="blog-links" id="blog-links4"></li>
 	</ul>
   </footer>
 
@@ -190,37 +392,35 @@
 		return res.json();
 	}
 	
+	// Deklarasi Variabel Global untuk ID StackExchange
+	var maxIdStackExchange = 5135896;
+	var maxIdMathOverflow = 511068;
+
 	async function getLatestQuestion() {
-	  //MathStackExchange
-	  newestData = await fetchJSON(
-			`https://api.stackexchange.com/2.3/questions?order=desc&sort=creation&site=math&pagesize=1`
-		  );
-
-		  if (!newestData.items.length) {
-			throw new Error("No questions on this site");
-		  }
-		  else{
-			maxIdStackExchange = newestData.items[0].question_id;
-		  }
-			
-	  //MathOverflow
-	  newestData = await fetchJSON(
-			`https://api.stackexchange.com/2.3/questions?order=desc&sort=creation&site=mathoverflow.net&pagesize=1`
-		  );
-
-		  if (!newestData.items.length) {
-			throw new Error("No questions on this site");
-		  }
-		  else{
-			maxIdMathOverflow = newestData.items[0].question_id;	 
-		  }
-
+	  try {
+		newestData = await fetchJSON(
+				`https://api.stackexchange.com/2.3/questions?order=desc&sort=creation&site=math&pagesize=1`
+			);
+			if (!newestData.items.length) {
+				throw new Error("No questions on this site");
+			}
+			else{
+				maxIdStackExchange = newestData.items[0].question_id;
+			}
+				
+		newestData = await fetchJSON(
+				`https://api.stackexchange.com/2.3/questions?order=desc&sort=creation&site=mathoverflow.net&pagesize=1`
+			);
+			if (!newestData.items.length) {
+				throw new Error("No questions on this site");
+			}
+			else{
+				maxIdMathOverflow = newestData.items[0].question_id;	 
+			}
+	  } catch (err) {
+		  console.warn("Gagal mengambil data terbaru dari StackExchange API, menggunakan data fallback.", err);
+	  }
 	}
-	
-	maxIdStackExchange = 5135896;
-	maxIdMathOverflow = 511068;
-	getLatestQuestion();
-	
 	
     const mathLinks = [
       { title: "Khan Academy", url: "https://www.khanacademy.org/math" },
@@ -342,17 +542,7 @@
 	  { title: "ResearchGate", url: `https://www.researchgate.net/` },
     ];
 
-
-    function getRandomColor() {
-      const letters = '0123456789ABCDEF';
-      let color = '#';
-      for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
-    }
-
-	function shuffleArray(array) {
+    function shuffleArray(array) {
 	  const newArray = [...array];
 	  for (let i = newArray.length - 1; i > 0; i--) {
 		const j = Math.floor(Math.random() * (i + 1));
@@ -405,7 +595,8 @@
     function generateButtons() {
       const shuffledLinks = shuffleArray([...mathLinks]);
       const mainContent = document.getElementById("main-content");
-      shuffledLinks.slice(0, 10).forEach((link, index) => {
+      
+      shuffledLinks.slice(0, 12).forEach((link, index) => {
         const anchor = document.createElement("a");
         anchor.href = link.url;
         anchor.target = "_blank";
@@ -415,7 +606,7 @@
         btn.textContent = link.title;
         btn.className = "math-button";
 		btn.id = `math-btn-${index + 1}`;
-        btn.style.backgroundColor = getRandomColor();
+        btn.style.background = generateRandomGradient(); 
 		btn.onclick = () => newLinkGen(link.title, index);
 		buttonList.push(btn)
 
@@ -428,9 +619,26 @@
 	  }
     }
 
+    // Ubah window.onload menjadi fungsi async agar sinkron dan menunggu loading API
+    window.onload = async () => {
+      // Tunggu hingga permintaan StackExchange API selesai ditarik sepenuhnya
+      await getLatestQuestion();
 
-    window.onload = () => {
+      // Kosongkan bagian 'loader' karena API sudah selesai dimuat
+      const mainContent = document.getElementById("main-content");
+      mainContent.innerHTML = '';
+      
+      // Jalankan fungsi pengacak tombol & link
       generateButtons();
+      
+      // Hapus list elemen blog yang tidak termuat setelah 3 detik
+      setTimeout(() => {
+          document.querySelectorAll('.blog-links').forEach(el => {
+              if (el.innerHTML.trim() === '') {
+                  el.style.display = 'none';
+              }
+          });
+      }, 3000); 
     };
   </script>
   
@@ -458,10 +666,8 @@
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 
-
 	function ArlinaRandomPosts(json) {
 		var startIndex = getRandomInt(1, (json.feed.openSearch$totalResults.$t - maxResults));
-		// console.log('Get the post feed start from ' + startIndex + ' until ' + (startIndex + maxResults));
 		document.write('<scr' + 'ipt src="' + homePage[countContainerId] + '/feeds/posts/summary?alt=json-in-script&orderby=updated&start-index=' + startIndex + '&max-results=' + maxResults + '&callback=randomPosts"></scr' + 'ipt>');
 	}
 	function randomPosts(json) {
@@ -483,8 +689,6 @@
 			}
 			skeleton += '<a href="' + link + '" target="_blank">' + articleTitle + '</a>';
 			ct.innerHTML = skeleton;
-		
-		
 	}
 	
 	for (var i = 0; i < 5; i++){
